@@ -1,4 +1,7 @@
 import { Box, Layout, Text, Button } from "@shared/core";
+import InfoArea from "@components/InfoArea";
+import InputArea from "@components/InputArea";
+import TableArea from "@components/TableArea";
 
 const IndexPage = () => {
   return (
@@ -8,13 +11,24 @@ const IndexPage = () => {
         width={{ _: 1, lg: 0.8, xl: 0.6 }}
         mx={{ _: 0, lg: "auto" }}
       >
+       
         <Text as="h1" variant="text-headline-medium" mb={[3, 2]}>
-          Vaporware scenester organic, yr JOMO 3 wolf moon polaroid sartorial.
+          Expense Tracker App
         </Text>
-        <Text variant="text-body-large" mb={4}>
-          Expense
-        </Text>
-        <Box
+        <Box display="grid">
+           <InfoArea/>
+       </Box>
+       <Box
+          display="grid">
+       <InputArea />
+       </Box>
+       <Box
+          display="grid">
+       <TableArea/>
+       </Box>
+
+
+        {/* <Box
           display="grid"
           gridAutoFlow={{ _: "row", lg: "column" }}
           gridGap="4"
@@ -26,7 +40,7 @@ const IndexPage = () => {
           <Button variant="outlined">Outlined Button</Button>
           <Button variant="text">Text Button</Button>
           <Button variant="tonal">Tonal Button</Button>
-        </Box>
+        </Box> */}
       </Box>
     </Layout>
   );
