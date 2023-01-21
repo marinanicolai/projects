@@ -1,4 +1,5 @@
 import React from 'react'
+import {IoArrowForwardCircleSharp, IoArrowBackCircleSharp } from 'react-icons/fa';
 import { currentMonthFormat } from "../../helpers/dateFilter";
 import { Layout, Box, Container } from "@shared/core";
 
@@ -20,9 +21,9 @@ const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props) => {
         display="grid"
         gridAutoFlow={{ _: "row", lg: "column" }}
       >    
-    <div><p>arrow left</p></div>
+   <IoArrowBackCircleSharp >
     <div>{currentMonthFormat(currentMonth)}</div>
-    <div><p>arrow right</p></div>
+    <IoArrowForwardCircleSharp>
   
     
     </Box>
