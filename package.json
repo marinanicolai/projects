@@ -6,6 +6,8 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:expense": "turbo run build --filter=expense...",
+    "build:web": "turbo run build --filter=web...",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "dev:expense": "turbo run dev --no-cache --filter=expense...",
     "dev:web": "turbo run dev --no-cache --filter=web...",
