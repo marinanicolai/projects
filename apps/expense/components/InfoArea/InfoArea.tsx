@@ -14,6 +14,19 @@ type Props = {
 };
 
 const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props) => {
+  const handlePrevMonth = () => {
+    let [year, month] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+  }
+ 
+  const handleNextMonth = () => {
+    let [year, month] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+  }
   return (
     <Container>
       <Box
@@ -23,9 +36,9 @@ const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props) => {
         display="grid"
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <IoArrowBackCircleSharp />
+        <IoArrowBackCircleSharp onClick={handlePrevMonth} />
         <div>{currentMonthFormat(currentMonth)}</div>
-        <IoArrowForwardCircleSharp />
+        <IoArrowForwardCircleSharp onClick={handleNextMonth} />
       </Box>
     </Container>
   );
