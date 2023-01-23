@@ -5,6 +5,8 @@ import {
 } from "react-icons/io5";
 import { currentMonthFormat } from "../../helpers/dateFilter";
 import { Layout, Box, Container, Button } from "@shared/core";
+import { TrackerItem } from "@components/TrackerItem/TrackerItem";
+
 
 type Props = {
   currentMonth: string;
@@ -41,11 +43,12 @@ const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props) => {
         <div>{currentMonthFormat(currentMonth)}</div>
         <IoArrowForwardCircleSharp onClick={handleNextMonth} /> 
       
-        <p>Income value={income}</p>    
+        <TrackerItem title="income" value={income}/>    
      
-        <p>Expense value={expense}</p>    
+        <TrackerItem title="expense" value={expense} />   
      
-        <p>Balance value={income-expense}</p>
+        <TrackerItem title="balance" value={income - expense}
+        color = {(income - expense) < 0 ? 'rgba(255, 0, 1, .7)' : 'rgba(0, 255, 0, .7)'} />
       </Box>
     </Container>
   );
