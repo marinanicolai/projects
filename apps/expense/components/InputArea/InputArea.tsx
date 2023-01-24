@@ -8,6 +8,12 @@ type Props = {
 }
 
 const InputArea = ({list} :Props) => {
+
+  const handleAddEvent = () => {
+    // let errors: string[] = [];
+console.log("clicked");
+
+  }
   return (   
      <>
         <table>
@@ -17,7 +23,7 @@ const InputArea = ({list} :Props) => {
              <th><TableItem size = {18} item = {`Category`} fontWeight={'normal'} margin={'auto'} /></th>
              <th><TableItem size = {18} item = {`Description`} fontWeight={'normal'} margin={'auto'} /></th>
              <th><TableItem size = {18} item = {`Amount`} fontWeight={'normal'} margin={'auto'} /></th>
-              <th> <Button variant="tonal">Add</Button></th>
+              <th> <Button variant="tonal" onClick={handleAddEvent}>Add</Button></th>
            </tr>
          </thead>
        </table>
