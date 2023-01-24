@@ -2,7 +2,7 @@ import {useState} from "react";
 import { Box, Layout, Text, Button } from "@shared/core";
 import InfoArea from "@components/InfoArea/InfoArea"
 import InputArea from "@components/InputArea/InputArea";
-import TableArea from "@components/TableArea";
+import TableArea from "@components/TableArea/TableArea";
 import {getCurrentMonth} from "../../expense/helpers/dateFilter";
 
 const IndexPage = () => {
