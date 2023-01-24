@@ -13,10 +13,10 @@ const InputArea = () => {
        
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-       <TableItem size = {18} item = {`Date`} fontWeight={'normal'} />
-       <TableItem size = {18} item = {`Category`} fontWeight={'normal'} />
-       <TableItem size = {18} item = {`Description`} fontWeight={'normal'} />
-       <TableItem size = {18} item = {`Amount`} fontWeight={'normal'} />
+       <TableItem size = {18} item = {`Date`} fontWeight={'normal'} margin={'auto'}/>
+       <TableItem size = {18} item = {`Category`} fontWeight={'normal'} margin={'auto'} />
+       <TableItem size = {18} item = {`Description`} fontWeight={'normal'} margin={'auto'} />
+       <TableItem size = {18} item = {`Amount`} fontWeight={'normal'} margin={'auto'} />
        <Button variant="tonal">Add</Button>
        </Box>
     </Container>
