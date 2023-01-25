@@ -13,4 +13,5 @@ export type ButtonVariant = typeof buttonVariants[number];
 
 export interface ButtonProps extends AriaButtonProps {
   variant?: ButtonVariant;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

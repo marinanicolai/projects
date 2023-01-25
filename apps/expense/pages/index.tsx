@@ -1,15 +1,16 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Box, Layout, Text, Button } from "@shared/core";
-import InfoArea from "@components/InfoArea/InfoArea"
+import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
-import {getCurrentMonth} from "../../expense/helpers/dateFilter";
+import { getCurrentMonth } from "../../expense/helpers/dateFilter";
 
 const IndexPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
 
   const handleMonthChange = (newMonth: string) => {
-    setCurrentMonth(newMonth);};
+    setCurrentMonth(newMonth);
+  };
   return (
     <Layout>
       <Box
@@ -17,25 +18,23 @@ const IndexPage = () => {
         width={{ _: 1, lg: 0.8, xl: 0.6 }}
         mx={{ _: 0, lg: "auto" }}
       >
-       
         <Text as="h1" variant="text-headline-medium" mb={[3, 2]}>
           Expense Tracker App
         </Text>
         <Box display="grid">
-           <InfoArea currentMonth={currentMonth} 
-                     onMonthChange={handleMonthChange}  
-                     income={10} 
-                     expense={0}/>
-       </Box>
-       <Box
-          display="grid">
-       <InputArea />
-       </Box>
-       <Box
-          display="grid">
-       <TableArea/>
-       </Box>
-
+          <InfoArea
+            currentMonth={currentMonth}
+            onMonthChange={handleMonthChange}
+            income={10}
+            expense={0}
+          />
+        </Box>
+        <Box display="grid">
+          <InputArea />
+        </Box>
+        <Box display="grid">
+          <TableArea />
+        </Box>
 
         {/* <Box
           display="grid"
