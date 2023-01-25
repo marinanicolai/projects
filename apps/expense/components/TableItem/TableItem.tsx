@@ -15,4 +15,8 @@ export const TableItem = ({ size, fontWeight, item, margin }: Props) => {
       {item}
     </div>
   );
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 4b59cd92217b1b2bd506b84a4f7355169e71e54a

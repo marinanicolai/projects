@@ -21,4 +21,8 @@ const TableArea = () => {
   );
 };
 
+<<<<<<< HEAD
 export default TableArea;
+=======
+export default TableArea;
+>>>>>>> 4b59cd92217b1b2bd506b84a4f7355169e71e54a
