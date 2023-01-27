@@ -15,7 +15,8 @@ const InputArea = ({ list }: Props) => {
 
   return (
     <>
-      <table>
+    <h1>table</h1>
+      {/* <table>
         <thead>
           <tr>
             <th>
@@ -62,7 +63,7 @@ const InputArea = ({ list }: Props) => {
       <tbody>
         {/* {list?.map((item,index) => (
         <TableItem size = {18} item={item} fontWeight={'normal'} margin={'auto'} key={index}/>))} */}
-      </tbody>
+      {/* </tbody> */} 
     </>
   );
 };
