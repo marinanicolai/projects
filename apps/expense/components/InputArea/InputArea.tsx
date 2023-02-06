@@ -16,7 +16,24 @@ const InputArea = ({ list }: Props) => {
   return (
     <>
     <h1>table</h1>
-      {/* <table>
+    <Container>
+    <Box
+        display="grid"
+        p={{ _: 8, xl: 4 }}
+        width={{ _: 1, lg: 0.9, xl: 0.7 }}
+        mx={{ _: 0, lg: "auto" }}
+        gridAutoFlow={{ _: "row", lg: "column" }}
+      >
+        <TableItem size={18} item={`Date`} fontWeight={"bold"}  />
+        <TableItem size={18} item={`Category`} fontWeight={"bold"}  />
+        <TableItem size={18} item={`Description`} fontWeight={"bold"} />
+        <TableItem size={18} item={`Amount`} fontWeight={"bold"}/>
+        <Button variant="tonal" onClick={handleAddEvent}>
+                Add
+              </Button>
+        </Box>
+        </Container>
+       {/* <table>
         <thead>
           <tr>
             <th>
@@ -59,8 +76,8 @@ const InputArea = ({ list }: Props) => {
             </th>
           </tr>
         </thead>
-      </table>
-      <tbody>
+      </table> */}
+      {/* <tbody>
         {/* {list?.map((item,index) => (
         <TableItem size = {18} item={item} fontWeight={'normal'} margin={'auto'} key={index}/>))} */}
       {/* </tbody> */} 

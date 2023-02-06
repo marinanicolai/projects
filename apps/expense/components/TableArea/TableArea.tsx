@@ -8,14 +8,15 @@ const TableArea = () => {
       <Box
         display="grid"
         p={{ _: 8, xl: 4 }}
-        width={{ _: 1, lg: 0.8, xl: 0.6 }}
+        width={{ _: 1, lg: 0.9, xl: 0.7 }}
         mx={{ _: 0, lg: "auto" }}
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <TableItem size={18} item={`Date`} fontWeight={"bold"} />
-        <TableItem size={18} item={`Category`} fontWeight={"bold"} />
-        <TableItem size={18} item={`Description`} fontWeight={"bold"} />
-        <TableItem size={18} item={`Amount`} fontWeight={"bold"} />
+        <TableItem size={18} item={`Date`} fontWeight={"bold"} width={"3rem"} />
+        <TableItem size={18} item={`Category`} fontWeight={"bold"} width={"3rem"} />
+        <TableItem size={18} item={`Description`} fontWeight={"bold"} width={"6rem"}/>
+        <TableItem size={18} item={`Amount`} fontWeight={"bold"} width={"6rem"} />
+        <TableItem />
       </Box>
     </Container>
   );
