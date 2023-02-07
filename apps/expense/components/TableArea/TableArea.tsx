@@ -12,7 +12,7 @@ const TableArea = () => {
         mx={{ _: 0, lg: "auto" }}
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <TableItem size={18} item={`Date`} fontWeight={"bold"} width={"3rem"} />
+        <TableItem size={18} item={`Date`} fontWeight={"bold"} width={"3rem"} /> 
         <TableItem size={18} item={`Category`} fontWeight={"bold"} width={"3rem"} />
         <TableItem size={18} item={`Description`} fontWeight={"bold"} width={"6rem"}/>
         <TableItem size={18} item={`Amount`} fontWeight={"bold"} width={"6rem"} />
