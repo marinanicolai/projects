@@ -3,6 +3,8 @@ import { Container, Box, Button } from "@shared/core";
 import { TableItem } from "@components/TableItem/TableItem";
 import { listenerCount } from "process";
 import InputLabel from "./InputLabel.styled.js";
+// import {Label} from "@shared/core";
+
 
 type Props = {
   list?: [];
@@ -24,10 +26,10 @@ const InputArea = ({ list }: Props) => {
         mx={{ _: 0, lg: "auto" }}
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <InputLabel>
+      <InputLabel>
          <TableItem size={18} item={`Date`} fontWeight={"bold"}  />
          <input type="date" />
-        </InputLabel>
+      </InputLabel>
         <InputLabel>
          <TableItem size={18} item={`Category`} fontWeight={"bold"}  />
         </InputLabel>
