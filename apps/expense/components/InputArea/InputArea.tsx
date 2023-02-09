@@ -1,13 +1,19 @@
 import React from "react";
+import {useState} from "react";
 import { Container, Box, Button } from "@shared/core";
 import { TableItem } from "@components/TableItem/TableItem";
 import { Label } from "@shared/core";
+import { categories } from '../../data/categories';
 
 type Props = {
   list?: [];
 };
 
+let categoryKeys: string[] = Object.keys(categories);
+
 const InputArea = ({ list }: Props) => {
+  const [categoryField, setCategoryField] = useState('');
+
   const handleAddEvent = () => {
     // let errors: string[] = [];
     console.log("clicked");
@@ -29,6 +35,14 @@ const InputArea = ({ list }: Props) => {
           </Label>
           <Label>
             <TableItem size={18} item={`Category`} fontWeight={"bold"} />
+            <select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
+            <>
+            <option></option>
+            {categoryKeys.map((key, index) => (
+              <option key={index} value={key}>{categories[key].title}</option>
+            ))}
+          </>
+            </select>
           </Label>
           <Label>
             <TableItem size={18} item={`Description`} fontWeight={"bold"} />
