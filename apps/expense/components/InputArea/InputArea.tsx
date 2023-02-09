@@ -13,6 +13,7 @@ let categoryKeys: string[] = Object.keys(categories);
 
 const InputArea = ({ list }: Props) => {
   const [categoryField, setCategoryField] = useState('');
+  const [titleField, setTitleField] = useState('');
 
   const handleAddEvent = () => {
     // let errors: string[] = [];
@@ -46,6 +47,7 @@ const InputArea = ({ list }: Props) => {
           </Label>
           <Label>
             <TableItem size={18} item={`Description`} fontWeight={"bold"} />
+            <input type="text" value={titleField} onChange={e => setTitleField(e.target.value)}/>
           </Label>
           <Label>
             <TableItem size={18} item={`Amount`} fontWeight={"bold"} />
