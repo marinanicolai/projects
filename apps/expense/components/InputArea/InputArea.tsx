@@ -3,15 +3,18 @@ import {useState} from "react";
 import { Container, Box, Button } from "@shared/core";
 import { TableItem } from "@components/TableItem/TableItem";
 import { Label } from "@shared/core";
+import {Item} from "../../types/Item";
+
 import { categories } from '../../data/categories';
 
 type Props = {
-  list?: [];
+  onAdd: (item : Item) => void;
+  
 };
 
 let categoryKeys: string[] = Object.keys(categories);
 
-const InputArea = ({ list }: Props) => {
+const InputArea = ({ onAdd }: Props) => {
   const [categoryField, setCategoryField] = useState('');
   const [titleField, setTitleField] = useState('');
   const [valueField, setValueField] = useState(0);
@@ -35,9 +38,17 @@ const InputArea = ({ list }: Props) => {
    
    if (errors.length > 0) {
     alert(errors.join("\n"));
-   }
-
+   } else {
+      onAdd({
+      date: new Date(dateField),
+      category: categoryField,
+      title: titleField,
+      value: valueField
+      });
+     
   };
+ 
+}
 
   return (
     <>

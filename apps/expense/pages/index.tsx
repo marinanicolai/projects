@@ -4,6 +4,7 @@ import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
 import { getCurrentMonth } from "../../expense/helpers/dateFilter";
+import {Item} from "../types/Item";
 
 const IndexPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
@@ -11,6 +12,10 @@ const IndexPage = () => {
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
   };
+const handleAddItem = (item : Item) => {
+console.log("clicked from app");
+}
+
   return (
     <Layout>
       <Box
@@ -30,7 +35,7 @@ const IndexPage = () => {
           />
         </Box>
         <Box display="grid">
-          <InputArea />
+          <InputArea onAdd={handleAddItem}/>
         </Box>
         <Box display="grid">
           <TableArea />
