@@ -14,6 +14,7 @@ let categoryKeys: string[] = Object.keys(categories);
 const InputArea = ({ list }: Props) => {
   const [categoryField, setCategoryField] = useState('');
   const [titleField, setTitleField] = useState('');
+  const [valueField, setValueField] = useState(0);
 
   const handleAddEvent = () => {
     // let errors: string[] = [];
@@ -51,6 +52,7 @@ const InputArea = ({ list }: Props) => {
           </Label>
           <Label>
             <TableItem size={18} item={`Amount`} fontWeight={"bold"} />
+            <input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))} />
           </Label>
           <Button variant="tonal" onClick={handleAddEvent}>
             Add
