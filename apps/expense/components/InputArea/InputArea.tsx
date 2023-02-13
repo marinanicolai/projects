@@ -18,8 +18,12 @@ const InputArea = ({ list }: Props) => {
   const [dateField, setDateField] = useState('');
 
   const handleAddEvent = () => {
-    // let errors: string[] = [];
-   console.log(dateField);
+     let errors: string[] = [];
+
+     if (isNaN(new Date(dateField).getTime())) {
+      errors.push("Invalid date!");
+     }
+   
 
    
   };
