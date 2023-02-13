@@ -45,9 +45,15 @@ const InputArea = ({ onAdd }: Props) => {
       title: titleField,
       value: valueField
       });
-     
-  };
- 
+     clearFields();
+  } 
+}
+
+const clearFields = () => {
+  setDateField('');
+  setCategoryField('');
+  setTitleField('');
+  setValueField(0);
 }
 
   return (

@@ -14,6 +14,7 @@ const IndexPage = () => {
   };
 const handleAddItem = (item : Item) => {
 console.log("clicked from app");
+console.log(item);
 }
 
   return (
