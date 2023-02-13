@@ -23,9 +23,20 @@ const InputArea = ({ list }: Props) => {
      if (isNaN(new Date(dateField).getTime())) {
       errors.push("Invalid date!");
      }
+     if (!categoryKeys.includes(categoryField)){
+      errors.push("Invalid category");
+     }
+     if (titleField === '') {
+      errors.push("Enter the description");
+     }
+     if (valueField <=0) {
+      errors.push("Enter a valid amount");
+     }
    
+   if (errors.length > 0) {
+    alert(errors.join("\n"));
+   }
 
-   
   };
 
   return (
