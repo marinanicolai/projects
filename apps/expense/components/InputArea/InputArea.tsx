@@ -15,10 +15,13 @@ const InputArea = ({ list }: Props) => {
   const [categoryField, setCategoryField] = useState('');
   const [titleField, setTitleField] = useState('');
   const [valueField, setValueField] = useState(0);
+  const [dateField, setDateField] = useState('');
 
   const handleAddEvent = () => {
     // let errors: string[] = [];
-    console.log("clicked");
+   console.log(dateField);
+
+   
   };
 
   return (
@@ -33,7 +36,7 @@ const InputArea = ({ list }: Props) => {
         >
           <Label>
             <TableItem size={18} item={`Date`} fontWeight={"bold"} />
-            <input type="date" />
+            <input type="date" value={dateField} onChange={e => setDateField(e.target.value)} />
           </Label>
           <Label>
             <TableItem size={18} item={`Category`} fontWeight={"bold"} />
