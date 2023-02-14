@@ -1,8 +1,13 @@
 import React from "react";
 import { Container, Box } from "@shared/core";
 import { TableItem } from "@components/TableItem/TableItem";
+import {Item} from "../../types/Item";
 
-const TableArea = () => {
+type Props = {
+  list: Item[]
+}
+
+const TableArea = ({list} : Props) => {
   return (
     <Container>
       <Box
@@ -17,6 +22,11 @@ const TableArea = () => {
         <TableItem size={18} item={`Description`} fontWeight={"bold"} width={"6rem"}/>
         <TableItem size={18} item={`Amount`} fontWeight={"bold"} width={"6rem"} />
         <TableItem />
+        <div>
+          {list.map((item, index) => (
+            <TableItem key={index} item={item} />
+          ))}
+        </div>
       </Box>
     </Container>
   );
