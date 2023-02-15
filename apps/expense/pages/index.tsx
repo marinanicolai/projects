@@ -3,10 +3,13 @@ import { Box, Layout, Text, Button } from "@shared/core";
 import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
-import { categories } from '../data/categories';
-import { getCurrentMonth,filterListByMonth } from "../../expense/helpers/dateFilter";
-import {Item} from "../types/Item";
-import {items} from "../data/items";
+import { categories } from "../data/categories";
+import {
+  getCurrentMonth,
+  filterListByMonth,
+} from "../../expense/helpers/dateFilter";
+import { Item } from "../types/Item";
+import { items } from "../data/items";
 
 const IndexPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
@@ -33,21 +36,19 @@ const IndexPage = () => {
 
     setIncome(incomeCount);
     setExpense(expenseCount);
-
   }, [filteredList]);
-
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
   };
-const handleAddItem = (item : Item) => {
-  let newList = [...list];
-  newList.push(item);
-  setList(newList);
-  console.log("this is title "+item.title);
-  console.log(item.value);
-  console.log(list);
-}
+  const handleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+    console.log("this is title " + item.title);
+    console.log(item.value);
+    console.log(list);
+  };
 
   return (
     <Layout>
@@ -68,10 +69,10 @@ const handleAddItem = (item : Item) => {
           />
         </Box>
         <Box display="grid">
-          <InputArea onAdd={handleAddItem}/>
+          <InputArea onAdd={handleAddItem} />
         </Box>
         <Box display="grid">
-          <TableArea list={filteredList} />
+          <TableArea items={list} />
         </Box>
 
         {/* <Box

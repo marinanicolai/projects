@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Box } from "@shared/core";
 import { TableItem } from "@components/TableItem/TableItem";
-import {Item} from "../../types/Item";
+import { Item } from "../../types/Item";
 
 type Props = {
-  list: Item[]
-}
+  items: Item[];
+};
 
-const TableArea = ({list} : Props) => {
-  console.log("this is the list from TableArea"+ list);
+const TableArea = ({ items }: Props) => {
+  console.log(items);
+
   return (
     <Container>
       <Box
@@ -18,20 +19,37 @@ const TableArea = ({list} : Props) => {
         mx={{ _: 0, lg: "auto" }}
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <TableItem size={18} name={`Date`} fontWeight={"bold"} width={"3rem"} /> 
-        <TableItem size={18} name={`Category`} fontWeight={"bold"} width={"3rem"} />
-        <TableItem size={18} name={`Description`} fontWeight={"bold"} width={"6rem"}/>
-        <TableItem size={18} name={`Amount`} fontWeight={"bold"} width={"6rem"} />
+        <TableItem size={18} name={`Date`} fontWeight={"bold"} width={"3rem"} />
+        <TableItem
+          size={18}
+          name={`Category`}
+          fontWeight={"bold"}
+          width={"3rem"}
+        />
+        <TableItem
+          size={18}
+          name={`Description`}
+          fontWeight={"bold"}
+          width={"6rem"}
+        />
+        <TableItem
+          size={18}
+          name={`Amount`}
+          fontWeight={"bold"}
+          width={"6rem"}
+        />
         <TableItem />
         <div>
-          {/* {list.map((item, index) => (
-            <p key={index}>{item.title}</p>
-          ))} */}
+          {items.map((item, index) => (
+            <>
+              <p>{new Date(item.date).toLocaleDateString()}</p>
+              <p key={index}>{item.title}</p>
+            </>
+          ))}
         </div>
       </Box>
     </Container>
   );
 };
-
 
 export default TableArea;
