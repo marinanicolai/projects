@@ -44,6 +44,9 @@ const handleAddItem = (item : Item) => {
   let newList = [...list];
   newList.push(item);
   setList(newList);
+  console.log("this is title "+item.title);
+  console.log(item.value);
+  console.log(list);
 }
 
   return (

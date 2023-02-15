@@ -8,6 +8,7 @@ type Props = {
 }
 
 const TableArea = ({list} : Props) => {
+  console.log("this is the list from TableArea"+ list);
   return (
     <Container>
       <Box
@@ -17,15 +18,15 @@ const TableArea = ({list} : Props) => {
         mx={{ _: 0, lg: "auto" }}
         gridAutoFlow={{ _: "row", lg: "column" }}
       >
-        <TableItem size={18} item={`Date`} fontWeight={"bold"} width={"3rem"} /> 
-        <TableItem size={18} item={`Category`} fontWeight={"bold"} width={"3rem"} />
-        <TableItem size={18} item={`Description`} fontWeight={"bold"} width={"6rem"}/>
-        <TableItem size={18} item={`Amount`} fontWeight={"bold"} width={"6rem"} />
+        <TableItem size={18} name={`Date`} fontWeight={"bold"} width={"3rem"} /> 
+        <TableItem size={18} name={`Category`} fontWeight={"bold"} width={"3rem"} />
+        <TableItem size={18} name={`Description`} fontWeight={"bold"} width={"6rem"}/>
+        <TableItem size={18} name={`Amount`} fontWeight={"bold"} width={"6rem"} />
         <TableItem />
         <div>
-          {list.map((item, index) => (
-            <TableItem key={index} item={item} />
-          ))}
+          {/* {list.map((item, index) => (
+            <p key={index}>{item.title}</p>
+          ))} */}
         </div>
       </Box>
     </Container>
