@@ -1,21 +1,54 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Layout, Text, Button } from "@shared/core";
 import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
-import { getCurrentMonth } from "../../expense/helpers/dateFilter";
-import {Item} from "../types/Item";
+import { categories } from "../data/categories";
+import {
+  getCurrentMonth,
+  filterListByMonth,
+} from "../../expense/helpers/dateFilter";
+import { Item } from "../types/Item";
+import { items } from "../data/items";
 
 const IndexPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+  const [list, setList] = useState(items);
+  const [filteredList, setFilteredList] = useState<Item[]>([]);
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
+
+  useEffect(() => {
+    setFilteredList(filterListByMonth(list, currentMonth));
+  }, [list, currentMonth]);
+
+  useEffect(() => {
+    let incomeCount = 0;
+    let expenseCount = 0;
+
+    for (let i in filteredList) {
+      if (categories[filteredList[i].category].expense) {
+        expenseCount += filteredList[i].value;
+      } else {
+        incomeCount += filteredList[i].value;
+      }
+    }
+
+    setIncome(incomeCount);
+    setExpense(expenseCount);
+  }, [filteredList]);
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
   };
-const handleAddItem = (item : Item) => {
-console.log("clicked from app");
-console.log(item);
-}
+  const handleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+    console.log("this is title " + item.title);
+    console.log(item.value);
+    console.log(list);
+  };
 
   return (
     <Layout>
@@ -36,10 +69,10 @@ console.log(item);
           />
         </Box>
         <Box display="grid">
-          <InputArea onAdd={handleAddItem}/>
+          <InputArea onAdd={handleAddItem} />
         </Box>
         <Box display="grid">
-          <TableArea />
+          <TableArea items={list} />
         </Box>
 
         {/* <Box

@@ -67,11 +67,11 @@ const clearFields = () => {
           gridAutoFlow={{ _: "row", lg: "column" }}
         >
           <Label>
-            <TableItem size={18} item={`Date`} fontWeight={"bold"} />
+            <TableItem size={18} name={`Date`} fontWeight={"bold"} />
             <input type="date" value={dateField} onChange={e => setDateField(e.target.value)} />
           </Label>
           <Label>
-            <TableItem size={18} item={`Category`} fontWeight={"bold"} />
+            <TableItem size={18} name={`Category`} fontWeight={"bold"} />
             <select value={categoryField} onChange={e => setCategoryField(e.target.value)}>
             <>
             <option></option>
@@ -82,11 +82,11 @@ const clearFields = () => {
             </select>
           </Label>
           <Label>
-            <TableItem size={18} item={`Description`} fontWeight={"bold"} />
+            <TableItem size={18} name={`Description`} fontWeight={"bold"} />
             <input type="text" value={titleField} onChange={e => setTitleField(e.target.value)}/>
           </Label>
           <Label>
-            <TableItem size={18} item={`Amount`} fontWeight={"bold"} />
+            <TableItem size={18} name={`Amount`} fontWeight={"bold"} />
             <input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))} />
           </Label>
           <Button variant="tonal" onClick={handleAddEvent}>
