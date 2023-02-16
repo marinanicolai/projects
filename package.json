@@ -10,6 +10,7 @@
     "build:web": "turbo run build --filter=web...",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "dev:expense": "turbo run dev --no-cache --filter=expense...",
+    "dev:table": "turbo run dev --no-cache --filter=table...",
     "dev:web": "turbo run dev --no-cache --filter=web...",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
