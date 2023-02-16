@@ -44,6 +44,8 @@ const TableArea = ({ items }: Props) => {
             <>
               <p>{new Date(item.date).toLocaleDateString()}</p>
               <p key={index}>{item.title}</p>
+              <p key={index}>{item.category}</p>
+              <p key={index}>{item.value}</p>
             </>
           ))}
         </div>

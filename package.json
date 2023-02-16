@@ -31,6 +31,18 @@
     "turbo": "latest"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@popperjs/core": "^2.11.6",
+    "@tanstack/match-sorter-utils": "^8.7.6",
+    "@tanstack/react-table": "^8.7.9",
+    "@tanstack/table-core": "^8.7.9",
+    "bootstrap": "^5.2.3",
+    "bootstrap.min.css": "link:bootstrap/dist/css/bootstrap.min.css",
+    "core@2.11.6": "link:popperjs/core@2.11.6",
+    "core@^2.11.6": "link:popperjs/core@^2.11.6",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
+    "react-dom": "^18.2.0",
     "shared": "^0.2.0"
   }
 }

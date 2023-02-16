@@ -3,6 +3,8 @@ import { Box, Layout, Text, Button } from "@shared/core";
 import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
+//import Table from "@components/Table/Table";
+import FilterTable from "@components/FilterTable/FilterTable";
 import { categories } from "../data/categories";
 import {
   getCurrentMonth,
@@ -18,25 +20,25 @@ const IndexPage = () => {
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
 
-  useEffect(() => {
-    setFilteredList(filterListByMonth(list, currentMonth));
-  }, [list, currentMonth]);
+  // useEffect(() => {
+  //   setFilteredList(filterListByMonth(list, currentMonth));
+  // }, [list, currentMonth]);
 
-  useEffect(() => {
-    let incomeCount = 0;
-    let expenseCount = 0;
+  // useEffect(() => {
+  //   let incomeCount = 0;
+  //   let expenseCount = 0;
 
-    for (let i in filteredList) {
-      if (categories[filteredList[i].category].expense) {
-        expenseCount += filteredList[i].value;
-      } else {
-        incomeCount += filteredList[i].value;
-      }
-    }
+  //   for (let i in filteredList) {
+  //     if (categories[filteredList[i].category].expense) {
+  //       expenseCount += filteredList[i].value;
+  //     } else {
+  //       incomeCount += filteredList[i].value;
+  //     }
+  //   }
 
-    setIncome(incomeCount);
-    setExpense(expenseCount);
-  }, [filteredList]);
+  //   setIncome(incomeCount);
+  //   setExpense(expenseCount);
+  // }, [filteredList]);
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
@@ -51,7 +53,8 @@ const IndexPage = () => {
   };
 
   return (
-    <Layout>
+    <>
+        <Layout>
       <Box
         p={{ _: 8, xl: 4 }}
         width={{ _: 1, lg: 0.8, xl: 0.6 }}
@@ -74,6 +77,7 @@ const IndexPage = () => {
         <Box display="grid">
           <TableArea items={list} />
         </Box>
+       
 
         {/* <Box
           display="grid"
@@ -90,6 +94,8 @@ const IndexPage = () => {
         </Box> */}
       </Box>
     </Layout>
+     <FilterTable/>
+     </>
   );
 };
 
