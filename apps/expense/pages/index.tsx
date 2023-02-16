@@ -4,7 +4,7 @@ import InfoArea from "@components/InfoArea/InfoArea";
 import InputArea from "@components/InputArea/InputArea";
 import TableArea from "@components/TableArea/TableArea";
 //import Table from "@components/Table/Table";
-import FilterTable from "@components/FilterTable/FilterTable";
+//import FilterTable from "@components/FilterTable/FilterTable";
 import { categories } from "../data/categories";
 import {
   getCurrentMonth,
@@ -94,7 +94,7 @@ const IndexPage = () => {
         </Box> */}
       </Box>
     </Layout>
-     <FilterTable/>
+     {/* <FilterTable/> */}
      </>
   );
 };
